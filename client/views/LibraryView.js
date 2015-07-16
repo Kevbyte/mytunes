@@ -5,8 +5,6 @@ var LibraryView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
-
-    // this.model.on('change:songQueue', this.render, this)
   },
 
   render: function(){
