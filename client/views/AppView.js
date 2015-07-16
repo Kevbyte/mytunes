@@ -13,6 +13,7 @@ var AppView = Backbone.View.extend({
       console.log('test');
       this.playerView.setSong(model.get('currentSong'));
     }, this);
+
   },
 
   render: function(){

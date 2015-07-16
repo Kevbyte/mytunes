@@ -1,0 +1,13 @@
+body {
+  background-image: url('Wallpaper.jpg');
+}
+
+.player {
+  color: white;
+  background-color: #800000;
+  opacity: 0.6;
+  position: center;
+  width: 30%;
+  margin: 220px;
+  border-radius: 10px;
+}
