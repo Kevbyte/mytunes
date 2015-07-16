@@ -3,29 +3,31 @@ var SongQueueView = Backbone.View.extend({
 
   tagName: "table",
 
-  // initialize: function() {
-  //   this.collection.on('enqueue', this.render, this);
+  template: _.template('<td>(<%= artist %>)</td><td><%= title %></td>'),
 
-  // },
-  setQueue: function(song) {
- 
-    this.model = song;
+
+  initialize: function() {
     this.render();
-  },
 
+    this.collection.on('add', this.render, this);
+  },
+    
 
   render: function() {
     this.$el.children().detach();
 
-    // this.$el.html('<th>Queue</th>').append(
-    //   this.collection.map(function(song){
-    //     return new SongQueueEntryView({model: song}).render();
-    //   })
-    // );
+    this.$el.html('<th>Queue</th>').append(
+      this.collection.map(function(song){
+        return new SongQueueEntryView({model: song}).render();
+      })
+    );
 
     // this.$el.detach();
 
-    return this.$el;
+
+    // return this.$el.html(this.template(this.model.attributes));
+
+    // return this.$el;
   }
 
 });
